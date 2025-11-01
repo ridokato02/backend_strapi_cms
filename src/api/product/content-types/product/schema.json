@@ -27,6 +27,9 @@
         "audios"
       ]
     },
+    "stock": {
+      "type": "integer"
+    },
     "description": {
       "type": "text"
     }
