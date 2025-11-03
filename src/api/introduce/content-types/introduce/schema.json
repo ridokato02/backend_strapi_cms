@@ -1,0 +1,21 @@
+{
+  "kind": "collectionType",
+  "collectionName": "introduces",
+  "info": {
+    "singularName": "introduce",
+    "pluralName": "introduces",
+    "displayName": "Introduce"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    }
+  }
+}
