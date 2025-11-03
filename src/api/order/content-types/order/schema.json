@@ -10,5 +10,65 @@
     "draftAndPublish": true
   },
   "pluginOptions": {},
-  "attributes": {}
+  "attributes": {
+    "user_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "mappedBy": "order"
+    },
+    "address_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::address.address",
+      "mappedBy": "order"
+    },
+    "total_amount": {
+      "type": "decimal"
+    },
+    "status_order": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "confirmed",
+        "shipping",
+        "completed",
+        "cancelled",
+        "refunded"
+      ]
+    },
+    "payment_status": {
+      "type": "enumeration",
+      "enum": [
+        "unpaid",
+        "paid",
+        "failed",
+        "refunded"
+      ]
+    },
+    "order_item": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order-item.order-item",
+      "mappedBy": "order_id"
+    },
+    "payment": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::payment.payment",
+      "mappedBy": "order_id"
+    },
+    "shipment": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::shipment.shipment",
+      "mappedBy": "order_id"
+    },
+    "coupon_usage": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::coupon-usage.coupon-usage",
+      "mappedBy": "order_id"
+    }
+  }
 }

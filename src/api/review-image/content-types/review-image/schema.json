@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "review_images",
+  "info": {
+    "singularName": "review-image",
+    "pluralName": "review-images",
+    "displayName": "ReviewImage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "review": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::review.review",
+      "inversedBy": "review_image"
+    },
+    "image_url": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}
