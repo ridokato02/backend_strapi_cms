@@ -50,6 +50,12 @@
         "expired",
         "disabled"
       ]
+    },
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order",
+      "mappedBy": "coupon_id"
     }
   }
 }

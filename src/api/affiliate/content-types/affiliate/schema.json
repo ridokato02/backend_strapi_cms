@@ -27,6 +27,12 @@
     },
     "is_active": {
       "type": "boolean"
+    },
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order",
+      "mappedBy": "affiliate_id"
     }
   }
 }

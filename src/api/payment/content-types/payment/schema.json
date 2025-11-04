@@ -39,6 +39,12 @@
     },
     "paid_at": {
       "type": "datetime"
+    },
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order",
+      "mappedBy": "payment_id"
     }
   }
 }

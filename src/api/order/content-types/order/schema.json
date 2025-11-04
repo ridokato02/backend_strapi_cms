@@ -13,8 +13,9 @@
   "attributes": {
     "users_id": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "plugin::users-permissions.user"
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "orders"
     },
     "status_order": {
       "type": "enumeration",
@@ -33,18 +34,21 @@
     },
     "payment_id": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::payment.payment"
+      "relation": "manyToOne",
+      "target": "api::payment.payment",
+      "inversedBy": "orders"
     },
     "coupon_id": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::coupon.coupon"
+      "relation": "manyToOne",
+      "target": "api::coupon.coupon",
+      "inversedBy": "orders"
     },
     "affiliate_id": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::affiliate.affiliate"
+      "relation": "manyToOne",
+      "target": "api::affiliate.affiliate",
+      "inversedBy": "orders"
     },
     "canceled_at": {
       "type": "datetime"
@@ -54,6 +58,12 @@
     },
     "delivery_at": {
       "type": "datetime"
+    },
+    "order_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order-item.order-item",
+      "mappedBy": "order_id"
     }
   }
 }

@@ -491,6 +491,7 @@ export interface ApiAffiliateAffiliate extends Struct.CollectionTypeSchema {
       'api::affiliate.affiliate'
     > &
       Schema.Attribute.Private;
+    orders: Schema.Attribute.Relation<'oneToMany', 'api::order.order'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -692,6 +693,7 @@ export interface ApiCouponCoupon extends Struct.CollectionTypeSchema {
       'api::coupon.coupon'
     > &
       Schema.Attribute.Private;
+    orders: Schema.Attribute.Relation<'oneToMany', 'api::order.order'>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -720,9 +722,9 @@ export interface ApiOrderItemOrderItem extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
-    order_id: Schema.Attribute.Relation<'oneToOne', 'api::order.order'>;
+    order_id: Schema.Attribute.Relation<'manyToOne', 'api::order.order'>;
     price: Schema.Attribute.Decimal;
-    product_id: Schema.Attribute.Relation<'oneToOne', 'api::product.product'>;
+    product_id: Schema.Attribute.Relation<'manyToOne', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
     quantity: Schema.Attribute.Integer;
     updatedAt: Schema.Attribute.DateTime;
@@ -743,12 +745,12 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
   };
   attributes: {
     affiliate_id: Schema.Attribute.Relation<
-      'oneToOne',
+      'manyToOne',
       'api::affiliate.affiliate'
     >;
     canceled_at: Schema.Attribute.DateTime;
     completed_at: Schema.Attribute.DateTime;
-    coupon_id: Schema.Attribute.Relation<'oneToOne', 'api::coupon.coupon'>;
+    coupon_id: Schema.Attribute.Relation<'manyToOne', 'api::coupon.coupon'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -756,7 +758,11 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::order.order'> &
       Schema.Attribute.Private;
-    payment_id: Schema.Attribute.Relation<'oneToOne', 'api::payment.payment'>;
+    order_items: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::order-item.order-item'
+    >;
+    payment_id: Schema.Attribute.Relation<'manyToOne', 'api::payment.payment'>;
     publishedAt: Schema.Attribute.DateTime;
     shipping_fee: Schema.Attribute.Decimal;
     status_order: Schema.Attribute.Enumeration<
@@ -772,7 +778,7 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     users_id: Schema.Attribute.Relation<
-      'oneToOne',
+      'manyToOne',
       'plugin::users-permissions.user'
     >;
   };
@@ -802,6 +808,7 @@ export interface ApiPaymentPayment extends Struct.CollectionTypeSchema {
     method: Schema.Attribute.Enumeration<
       ['cod', 'credit_card', 'paypal', 'bank_transfer', 'momo', 'vnpay']
     >;
+    orders: Schema.Attribute.Relation<'oneToMany', 'api::order.order'>;
     paid_at: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
     status_payment: Schema.Attribute.Enumeration<
@@ -846,6 +853,10 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
+    order_items: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::order-item.order-item'
+    >;
     price: Schema.Attribute.Decimal;
     publishedAt: Schema.Attribute.DateTime;
     quantity: Schema.Attribute.BigInteger;
@@ -1337,6 +1348,7 @@ export interface PluginUsersPermissionsUser
       'plugin::users-permissions.user'
     > &
       Schema.Attribute.Private;
+    orders: Schema.Attribute.Relation<'oneToMany', 'api::order.order'>;
     password: Schema.Attribute.Password &
       Schema.Attribute.Private &
       Schema.Attribute.SetMinMaxLength<{

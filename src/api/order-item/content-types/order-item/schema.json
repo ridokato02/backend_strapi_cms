@@ -13,13 +13,15 @@
   "attributes": {
     "order_id": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::order.order"
+      "relation": "manyToOne",
+      "target": "api::order.order",
+      "inversedBy": "order_items"
     },
     "product_id": {
       "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::product.product"
+      "relation": "manyToOne",
+      "target": "api::product.product",
+      "inversedBy": "order_items"
     },
     "name": {
       "type": "string"
