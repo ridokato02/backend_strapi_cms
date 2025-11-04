@@ -14,20 +14,8 @@
     "name": {
       "type": "string"
     },
-    "type": {
-      "type": "enumeration",
-      "enum": [
-        "text",
-        "number",
-        "color",
-        "select"
-      ]
-    },
-    "product_attribute": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::product-attribute.product-attribute",
-      "mappedBy": "attribute"
+    "description": {
+      "type": "text"
     }
   }
 }

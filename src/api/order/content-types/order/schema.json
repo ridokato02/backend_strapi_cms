@@ -11,64 +11,49 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "user_id": {
+    "users_id": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "plugin::users-permissions.user",
-      "mappedBy": "order"
-    },
-    "address_id": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::address.address",
-      "mappedBy": "order"
-    },
-    "total_amount": {
-      "type": "decimal"
+      "target": "plugin::users-permissions.user"
     },
     "status_order": {
       "type": "enumeration",
       "enum": [
-        "pending",
-        "confirmed",
-        "shipping",
-        "completed",
-        "cancelled",
-        "refunded"
+        "đang chờ xử lý",
+        "đã xử lý",
+        "đã giao hàng",
+        "hủy đơn hàng"
       ]
     },
-    "payment_status": {
-      "type": "enumeration",
-      "enum": [
-        "unpaid",
-        "paid",
-        "failed",
-        "refunded"
-      ]
+    "shipping_fee": {
+      "type": "decimal"
     },
-    "order_item": {
+    "total": {
+      "type": "decimal"
+    },
+    "payment_id": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::order-item.order-item",
-      "mappedBy": "order_id"
+      "target": "api::payment.payment"
     },
-    "payment": {
+    "coupon_id": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::payment.payment",
-      "mappedBy": "order_id"
+      "target": "api::coupon.coupon"
     },
-    "shipment": {
+    "affiliate_id": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::shipment.shipment",
-      "mappedBy": "order_id"
+      "target": "api::affiliate.affiliate"
     },
-    "coupon_usage": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::coupon-usage.coupon-usage",
-      "mappedBy": "order_id"
+    "canceled_at": {
+      "type": "datetime"
+    },
+    "completed_at": {
+      "type": "datetime"
+    },
+    "delivery_at": {
+      "type": "datetime"
     }
   }
 }

@@ -66,41 +66,20 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "cart": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::cart.cart",
-      "inversedBy": "users_permissions_user"
-    },
-    "wishlist": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::wishlist.wishlist",
-      "mappedBy": "users_permissions_user"
-    },
     "address": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::address.address",
-      "mappedBy": "user_id"
+      "type": "text"
     },
-    "order": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::order.order",
-      "inversedBy": "user_id"
+    "city": {
+      "type": "string"
     },
-    "review": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::review.review",
-      "mappedBy": "user_id"
+    "country": {
+      "type": "string"
     },
-    "coupon_usage": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::coupon-usage.coupon-usage",
-      "mappedBy": "user_id"
+    "postal_code": {
+      "type": "string"
+    },
+    "phone_number": {
+      "type": "biginteger"
     }
   }
 }

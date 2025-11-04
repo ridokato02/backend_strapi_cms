@@ -11,54 +11,56 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "category_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::categorie.categorie"
+    },
     "name": {
       "type": "string"
-    },
-    "description": {
-      "type": "text"
-    },
-    "categorie": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::categorie.categorie",
-      "inversedBy": "products"
     },
     "slug": {
       "type": "text",
       "unique": true
     },
-    "brand": {
-      "type": "string"
-    },
-    "thumbnail_url": {
+    "description_product": {
       "type": "text"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "image_url": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "discount": {
+      "type": "decimal"
+    },
+    "quantity": {
+      "type": "biginteger"
+    },
+    "sold": {
+      "type": "biginteger"
     },
     "status_product": {
       "type": "enumeration",
       "enum": [
-        "draft",
-        "active",
-        "inactive",
-        "archived"
+        "ngừng kinh doanh",
+        "kích hoạt"
       ]
     },
-    "product_variant": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::product-variant.product-variant",
-      "inversedBy": "product_id"
-    },
-    "wishlist_item": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::wishlist-item.wishlist-item",
-      "mappedBy": "product_id"
-    },
-    "review": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::review.review",
-      "mappedBy": "product_id"
+    "featured": {
+      "type": "enumeration",
+      "enum": [
+        "không",
+        "có"
+      ]
     }
   }
 }

@@ -14,20 +14,21 @@
     "order_id": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::order.order",
-      "inversedBy": "order_item"
+      "target": "api::order.order"
     },
-    "variant_id": {
+    "product_id": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::product-variant.product-variant",
-      "inversedBy": "order_item"
+      "target": "api::product.product"
     },
-    "price": {
-      "type": "decimal"
+    "name": {
+      "type": "string"
     },
     "quantity": {
       "type": "integer"
+    },
+    "price": {
+      "type": "decimal"
     }
   }
 }

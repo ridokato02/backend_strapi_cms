@@ -11,20 +11,21 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "cart": {
+    "cart_id": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::cart.cart",
-      "inversedBy": "cart_item"
+      "target": "api::cart.cart"
     },
-    "variant_id": {
+    "product_id": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::product-variant.product-variant",
-      "inversedBy": "cart_item"
+      "target": "api::product.product"
     },
     "quantity": {
       "type": "integer"
+    },
+    "price_cart": {
+      "type": "biginteger"
     }
   }
 }

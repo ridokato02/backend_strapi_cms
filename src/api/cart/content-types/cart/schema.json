@@ -11,17 +11,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "users_permissions_user": {
+    "users_id": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "plugin::users-permissions.user",
-      "mappedBy": "cart"
-    },
-    "cart_item": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::cart-item.cart-item",
-      "mappedBy": "cart"
+      "target": "plugin::users-permissions.user"
     }
   }
 }

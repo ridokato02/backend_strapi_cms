@@ -11,53 +11,45 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "code": {
-      "type": "string"
+    "coupon_code": {
+      "type": "string",
+      "unique": true
     },
-    "description_coupon": {
-      "type": "text"
-    },
-    "discount_type": {
+    "coupon_type": {
       "type": "enumeration",
       "enum": [
         "percent",
-        "fixed"
+        "fixed_amount"
       ]
     },
-    "discount_value": {
+    "coupon_value": {
       "type": "decimal"
     },
-    "max_discount": {
-      "type": "decimal"
-    },
-    "min_order": {
-      "type": "decimal"
-    },
-    "start_date": {
+    "coupon_start_date": {
       "type": "datetime"
     },
-    "end_date": {
+    "coupon_end_date": {
       "type": "datetime"
     },
-    "usage_limit": {
+    "coupon_min_spend": {
+      "type": "decimal"
+    },
+    "coupon_max_spend": {
+      "type": "decimal"
+    },
+    "coupon_uses_per_customer": {
       "type": "biginteger"
     },
-    "per_user_limit": {
+    "coupon_uses_per_coupon": {
       "type": "biginteger"
     },
-    "status_coupon": {
+    "coupon_status": {
       "type": "enumeration",
       "enum": [
         "active",
         "expired",
         "disabled"
       ]
-    },
-    "coupon_usage": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::coupon-usage.coupon-usage",
-      "mappedBy": "coupon_id"
     }
   }
 }
