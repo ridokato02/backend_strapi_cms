@@ -35,6 +35,18 @@
       "relation": "oneToOne",
       "target": "api::product-attribute.product-attribute",
       "mappedBy": "categorie"
+    },
+    "categorie": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::categorie.categorie",
+      "inversedBy": "parent_id"
+    },
+    "parent_id": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::categorie.categorie",
+      "mappedBy": "categorie"
     }
   }
 }

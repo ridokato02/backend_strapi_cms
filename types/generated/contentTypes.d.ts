@@ -616,6 +616,10 @@ export interface ApiCategorieCategorie extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    categorie: Schema.Attribute.Relation<
+      'manyToOne',
+      'api::categorie.categorie'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -628,6 +632,10 @@ export interface ApiCategorieCategorie extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
+    parent_id: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::categorie.categorie'
+    >;
     product_attribute: Schema.Attribute.Relation<
       'oneToOne',
       'api::product-attribute.product-attribute'
