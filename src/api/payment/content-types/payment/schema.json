@@ -40,11 +40,17 @@
     "paid_at": {
       "type": "datetime"
     },
-    "orders": {
+    "order": {
       "type": "relation",
-      "relation": "oneToMany",
+      "relation": "manyToOne",
       "target": "api::order.order",
-      "mappedBy": "payment_id"
+      "inversedBy": "payment_ids"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "payments"
     }
   }
 }

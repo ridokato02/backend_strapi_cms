@@ -32,11 +32,11 @@
     "total": {
       "type": "decimal"
     },
-    "payment_id": {
+    "payment_ids": {
       "type": "relation",
-      "relation": "manyToOne",
+      "relation": "oneToMany",
       "target": "api::payment.payment",
-      "inversedBy": "orders"
+      "mappedBy": "order"
     },
     "coupon_id": {
       "type": "relation",

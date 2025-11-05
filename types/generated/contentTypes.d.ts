@@ -574,7 +574,7 @@ export interface ApiCartItemCartItem extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    cart_id: Schema.Attribute.Relation<'oneToOne', 'api::cart.cart'>;
+    cart: Schema.Attribute.Relation<'manyToOne', 'api::cart.cart'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -585,7 +585,7 @@ export interface ApiCartItemCartItem extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     price_cart: Schema.Attribute.BigInteger;
-    product_id: Schema.Attribute.Relation<'oneToOne', 'api::product.product'>;
+    product_id: Schema.Attribute.Relation<'manyToOne', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
     quantity: Schema.Attribute.Integer;
     updatedAt: Schema.Attribute.DateTime;
@@ -605,6 +605,10 @@ export interface ApiCartCart extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    cart_items: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::cart-item.cart-item'
+    >;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -762,7 +766,7 @@ export interface ApiOrderOrder extends Struct.CollectionTypeSchema {
       'oneToMany',
       'api::order-item.order-item'
     >;
-    payment_id: Schema.Attribute.Relation<'manyToOne', 'api::payment.payment'>;
+    payment_ids: Schema.Attribute.Relation<'oneToMany', 'api::payment.payment'>;
     publishedAt: Schema.Attribute.DateTime;
     shipping_fee: Schema.Attribute.Decimal;
     status_order: Schema.Attribute.Enumeration<
@@ -808,7 +812,7 @@ export interface ApiPaymentPayment extends Struct.CollectionTypeSchema {
     method: Schema.Attribute.Enumeration<
       ['cod', 'credit_card', 'paypal', 'bank_transfer', 'momo', 'vnpay']
     >;
-    orders: Schema.Attribute.Relation<'oneToMany', 'api::order.order'>;
+    order: Schema.Attribute.Relation<'manyToOne', 'api::order.order'>;
     paid_at: Schema.Attribute.DateTime;
     publishedAt: Schema.Attribute.DateTime;
     status_payment: Schema.Attribute.Enumeration<
@@ -818,6 +822,10 @@ export interface ApiPaymentPayment extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    users_permissions_user: Schema.Attribute.Relation<
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
   };
 }
 
@@ -832,6 +840,10 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    cart_items: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::cart-item.cart-item'
+    >;
     category_id: Schema.Attribute.Relation<
       'oneToOne',
       'api::categorie.categorie'
@@ -1328,8 +1340,9 @@ export interface PluginUsersPermissionsUser
     draftAndPublish: false;
   };
   attributes: {
-    address: Schema.Attribute.Text;
+    address_line: Schema.Attribute.Text;
     blocked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    cart: Schema.Attribute.Relation<'oneToOne', 'api::cart.cart'>;
     city: Schema.Attribute.String;
     confirmationToken: Schema.Attribute.String & Schema.Attribute.Private;
     confirmed: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
@@ -1354,6 +1367,7 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
+    payments: Schema.Attribute.Relation<'oneToMany', 'api::payment.payment'>;
     phone_number: Schema.Attribute.BigInteger;
     postal_code: Schema.Attribute.String;
     provider: Schema.Attribute.String;
@@ -1372,6 +1386,7 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 3;
       }>;
+    ward: Schema.Attribute.String;
   };
 }
 

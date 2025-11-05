@@ -66,26 +66,41 @@
       "inversedBy": "users",
       "configurable": false
     },
-    "address": {
-      "type": "text"
-    },
-    "city": {
-      "type": "string"
+    "phone_number": {
+      "type": "biginteger"
     },
     "country": {
       "type": "string"
     },
-    "postal_code": {
+    "city": {
       "type": "string"
     },
-    "phone_number": {
-      "type": "biginteger"
+    "ward": {
+      "type": "string"
+    },
+    "address_line": {
+      "type": "text"
+    },
+    "postal_code": {
+      "type": "string"
     },
     "orders": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::order.order",
       "mappedBy": "users_id"
+    },
+    "cart": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::cart.cart",
+      "inversedBy": "users_id"
+    },
+    "payments": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::payment.payment",
+      "mappedBy": "users_permissions_user"
     }
   }
 }

@@ -67,6 +67,12 @@
       "relation": "oneToMany",
       "target": "api::order-item.order-item",
       "mappedBy": "product_id"
+    },
+    "cart_items": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::cart-item.cart-item",
+      "mappedBy": "product_id"
     }
   }
 }
