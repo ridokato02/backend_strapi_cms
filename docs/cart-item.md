@@ -6,9 +6,14 @@
 
 ## Các trường
 
-| Tên trường   | Kiểu dữ liệu | Chi tiết                      |
-| ------------ | ------------ | ----------------------------- |
-| `cart_id`    | `relation`   | oneToOne với `api::cart.cart`   |
-| `product_id` | `relation`   | oneToOne với `api::product.product` |
-| `quantity`   | `integer`    |                               |
-| `price_cart` | `biginteger` |                               |
+| Tên trường | Kiểu dữ liệu | Chi tiết |
+| --- | --- | --- |
+| `quantity` | `integer` | |
+| `price_cart` | `decimal` | |
+
+## Quan hệ
+
+| Tên trường | Kiểu quan hệ | Tên bảng liên kết |
+| --- | --- | --- |
+| `product_id` | manyToOne | `product` |
+| `cart` | manyToOne | `cart` |

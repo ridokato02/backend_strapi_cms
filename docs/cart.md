@@ -4,8 +4,9 @@
 - **Loại:** `collectionType`
 - **Tên hiển thị:** Cart
 
-## Các trường
+## Quan hệ
 
-| Tên trường | Kiểu dữ liệu | Chi tiết                                |
-| ---------- | ------------ | --------------------------------------- |
-| `users_id` | `relation`   | oneToOne với `plugin::users-permissions.user` |
+| Tên trường | Kiểu quan hệ | Tên bảng liên kết |
+| --- | --- | --- |
+| `users_id` | oneToOne | `user` |
+| `cart_items` | oneToMany | `cart-item` |

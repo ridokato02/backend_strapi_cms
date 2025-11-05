@@ -6,10 +6,16 @@
 
 ## Các trường
 
-| Tên trường   | Kiểu dữ liệu | Chi tiết                                |
-| ------------ | ------------ | --------------------------------------- |
-| `user_id`    | `relation`   | oneToOne với `plugin::users-permissions.user` |
-| `code`       | `string`     |                                         |
-| `commission` | `decimal`    |                                         |
-| `balance`    | `decimal`    |                                         |
-| `is_active`  | `boolean`    |                                         |
+| Tên trường | Kiểu dữ liệu | Chi tiết |
+| --- | --- | --- |
+| `code` | `string` | |
+| `commission` | `decimal` | |
+| `balance` | `decimal` | |
+| `is_active` | `boolean` | |
+
+## Quan hệ
+
+| Tên trường | Kiểu quan hệ | Tên bảng liên kết |
+| --- | --- | --- |
+| `user_id` | oneToOne | `user` |
+| `orders` | oneToMany | `order` |

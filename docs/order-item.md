@@ -6,10 +6,15 @@
 
 ## Các trường
 
-| Tên trường   | Kiểu dữ liệu | Chi tiết                      |
-| ------------ | ------------ | ----------------------------- |
-| `order_id`   | `relation`   | oneToOne với `api::order.order` |
-| `product_id` | `relation`   | oneToOne với `api::product.product` |
-| `name`       | `string`     |                               |
-| `quantity`   | `integer`    |                               |
-| `price`      | `decimal`    |                               |
+| Tên trường | Kiểu dữ liệu | Chi tiết |
+| --- | --- | --- |
+| `name` | `string` | |
+| `quantity` | `integer` | |
+| `price` | `decimal` | |
+
+## Quan hệ
+
+| Tên trường | Kiểu quan hệ | Tên bảng liên kết |
+| --- | --- | --- |
+| `order_id` | manyToOne | `order` |
+| `product_id` | manyToOne | `product` |
