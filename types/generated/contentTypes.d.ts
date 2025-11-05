@@ -584,7 +584,7 @@ export interface ApiCartItemCartItem extends Struct.CollectionTypeSchema {
       'api::cart-item.cart-item'
     > &
       Schema.Attribute.Private;
-    price_cart: Schema.Attribute.BigInteger;
+    price_cart: Schema.Attribute.Decimal;
     product_id: Schema.Attribute.Relation<'manyToOne', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
     quantity: Schema.Attribute.Integer;
@@ -871,9 +871,9 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     >;
     price: Schema.Attribute.Decimal;
     publishedAt: Schema.Attribute.DateTime;
-    quantity: Schema.Attribute.BigInteger;
+    quantity: Schema.Attribute.Integer;
     slug: Schema.Attribute.Text & Schema.Attribute.Unique;
-    sold: Schema.Attribute.BigInteger;
+    sold: Schema.Attribute.Integer;
     status_product: Schema.Attribute.Enumeration<
       ['ng\u1EEBng kinh doanh', 'k\u00EDch ho\u1EA1t']
     >;

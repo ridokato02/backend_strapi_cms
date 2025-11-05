@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-11-05T02:26:41.034Z"
+    "x-generation-date": "2025-11-05T03:21:40.520Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -8649,14 +8649,10 @@
                                 "format": "float"
                               },
                               "quantity": {
-                                "type": "string",
-                                "pattern": "^\\d*$",
-                                "example": "123456789"
+                                "type": "integer"
                               },
                               "sold": {
-                                "type": "string",
-                                "pattern": "^\\d*$",
-                                "example": "123456789"
+                                "type": "integer"
                               },
                               "status_product": {
                                 "type": "string",
@@ -8712,9 +8708,8 @@
                                       "type": "integer"
                                     },
                                     "price_cart": {
-                                      "type": "string",
-                                      "pattern": "^\\d*$",
-                                      "example": "123456789"
+                                      "type": "number",
+                                      "format": "float"
                                     },
                                     "cart": {
                                       "type": "object",
@@ -12205,14 +12200,10 @@
                                 "format": "float"
                               },
                               "quantity": {
-                                "type": "string",
-                                "pattern": "^\\d*$",
-                                "example": "123456789"
+                                "type": "integer"
                               },
                               "sold": {
-                                "type": "string",
-                                "pattern": "^\\d*$",
-                                "example": "123456789"
+                                "type": "integer"
                               },
                               "status_product": {
                                 "type": "string",
@@ -12268,9 +12259,8 @@
                                       "type": "integer"
                                     },
                                     "price_cart": {
-                                      "type": "string",
-                                      "pattern": "^\\d*$",
-                                      "example": "123456789"
+                                      "type": "number",
+                                      "format": "float"
                                     },
                                     "cart": {
                                       "type": "object",
@@ -12764,9 +12754,8 @@
                 "type": "integer"
               },
               "price_cart": {
-                "type": "string",
-                "pattern": "^\\d*$",
-                "example": "123456789"
+                "type": "number",
+                "format": "float"
               },
               "cart": {
                 "oneOf": [
@@ -13693,14 +13682,10 @@
                 "format": "float"
               },
               "quantity": {
-                "type": "string",
-                "pattern": "^\\d*$",
-                "example": "123456789"
+                "type": "integer"
               },
               "sold": {
-                "type": "string",
-                "pattern": "^\\d*$",
-                "example": "123456789"
+                "type": "integer"
               },
               "status_product": {
                 "type": "string",
@@ -14011,9 +13996,8 @@
                                         "type": "integer"
                                       },
                                       "price_cart": {
-                                        "type": "string",
-                                        "pattern": "^\\d*$",
-                                        "example": "123456789"
+                                        "type": "number",
+                                        "format": "float"
                                       },
                                       "cart": {
                                         "type": "object",
@@ -14785,9 +14769,8 @@
             "type": "integer"
           },
           "price_cart": {
-            "type": "string",
-            "pattern": "^\\d*$",
-            "example": "123456789"
+            "type": "number",
+            "format": "float"
           },
           "cart": {
             "type": "object",
@@ -17185,14 +17168,10 @@
                                     "format": "float"
                                   },
                                   "quantity": {
-                                    "type": "string",
-                                    "pattern": "^\\d*$",
-                                    "example": "123456789"
+                                    "type": "integer"
                                   },
                                   "sold": {
-                                    "type": "string",
-                                    "pattern": "^\\d*$",
-                                    "example": "123456789"
+                                    "type": "integer"
                                   },
                                   "status_product": {
                                     "type": "string",
@@ -17376,9 +17355,8 @@
                                 "type": "integer"
                               },
                               "price_cart": {
-                                "type": "string",
-                                "pattern": "^\\d*$",
-                                "example": "123456789"
+                                "type": "number",
+                                "format": "float"
                               },
                               "cart": {
                                 "type": "object",
@@ -19713,14 +19691,10 @@
                                 "format": "float"
                               },
                               "quantity": {
-                                "type": "string",
-                                "pattern": "^\\d*$",
-                                "example": "123456789"
+                                "type": "integer"
                               },
                               "sold": {
-                                "type": "string",
-                                "pattern": "^\\d*$",
-                                "example": "123456789"
+                                "type": "integer"
                               },
                               "status_product": {
                                 "type": "string",
@@ -19776,9 +19750,8 @@
                                       "type": "integer"
                                     },
                                     "price_cart": {
-                                      "type": "string",
-                                      "pattern": "^\\d*$",
-                                      "example": "123456789"
+                                      "type": "number",
+                                      "format": "float"
                                     },
                                     "cart": {
                                       "type": "object",
@@ -21537,14 +21510,10 @@
                                   "format": "float"
                                 },
                                 "quantity": {
-                                  "type": "string",
-                                  "pattern": "^\\d*$",
-                                  "example": "123456789"
+                                  "type": "integer"
                                 },
                                 "sold": {
-                                  "type": "string",
-                                  "pattern": "^\\d*$",
-                                  "example": "123456789"
+                                  "type": "integer"
                                 },
                                 "status_product": {
                                   "type": "string",
@@ -21728,9 +21697,8 @@
                               "type": "integer"
                             },
                             "price_cart": {
-                              "type": "string",
-                              "pattern": "^\\d*$",
-                              "example": "123456789"
+                              "type": "number",
+                              "format": "float"
                             },
                             "cart": {
                               "type": "object",
@@ -23717,14 +23685,10 @@
                                   "format": "float"
                                 },
                                 "quantity": {
-                                  "type": "string",
-                                  "pattern": "^\\d*$",
-                                  "example": "123456789"
+                                  "type": "integer"
                                 },
                                 "sold": {
-                                  "type": "string",
-                                  "pattern": "^\\d*$",
-                                  "example": "123456789"
+                                  "type": "integer"
                                 },
                                 "status_product": {
                                   "type": "string",
@@ -23908,9 +23872,8 @@
                               "type": "integer"
                             },
                             "price_cart": {
-                              "type": "string",
-                              "pattern": "^\\d*$",
-                              "example": "123456789"
+                              "type": "number",
+                              "format": "float"
                             },
                             "cart": {
                               "type": "object",
@@ -24663,14 +24626,10 @@
                 "format": "float"
               },
               "quantity": {
-                "type": "string",
-                "pattern": "^\\d*$",
-                "example": "123456789"
+                "type": "integer"
               },
               "sold": {
-                "type": "string",
-                "pattern": "^\\d*$",
-                "example": "123456789"
+                "type": "integer"
               },
               "status_product": {
                 "type": "string",
@@ -25619,14 +25578,10 @@
             "format": "float"
           },
           "quantity": {
-            "type": "string",
-            "pattern": "^\\d*$",
-            "example": "123456789"
+            "type": "integer"
           },
           "sold": {
-            "type": "string",
-            "pattern": "^\\d*$",
-            "example": "123456789"
+            "type": "integer"
           },
           "status_product": {
             "type": "string",
@@ -26092,14 +26047,10 @@
                                         "format": "float"
                                       },
                                       "quantity": {
-                                        "type": "string",
-                                        "pattern": "^\\d*$",
-                                        "example": "123456789"
+                                        "type": "integer"
                                       },
                                       "sold": {
-                                        "type": "string",
-                                        "pattern": "^\\d*$",
-                                        "example": "123456789"
+                                        "type": "integer"
                                       },
                                       "status_product": {
                                         "type": "string",
@@ -26200,9 +26151,8 @@
                                     "type": "integer"
                                   },
                                   "price_cart": {
-                                    "type": "string",
-                                    "pattern": "^\\d*$",
-                                    "example": "123456789"
+                                    "type": "number",
+                                    "format": "float"
                                   },
                                   "cart": {
                                     "type": "object",

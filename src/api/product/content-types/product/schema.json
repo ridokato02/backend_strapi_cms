@@ -43,10 +43,10 @@
       "type": "decimal"
     },
     "quantity": {
-      "type": "biginteger"
+      "type": "integer"
     },
     "sold": {
-      "type": "biginteger"
+      "type": "integer"
     },
     "status_product": {
       "type": "enumeration",

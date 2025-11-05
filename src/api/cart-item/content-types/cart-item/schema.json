@@ -21,7 +21,7 @@
       "type": "integer"
     },
     "price_cart": {
-      "type": "biginteger"
+      "type": "decimal"
     },
     "cart": {
       "type": "relation",
